@@ -25,7 +25,7 @@ func main() {
 
 
 
-        cpuIdleString := strconv.FormatFloat(cpuIdle, 'f', 2, 64)
+        cpuIdleString := strconv.FormatFloat(cpuIdle, 'f', 0, 64)
 
         fmt.Println("CPU Usage high - Setting server weight to %s%", cpuIdleString)
 		
