@@ -27,9 +27,9 @@ func main() {
 
         fmt.Println("CPU Usage high - Setting server weight to %d%", cpuIdle)
 		
-		cpuIdleString = reflect.TypeOf(cpuIdle)
+		cpuIdleString := reflect.TypeOf(cpuIdle)
 		
-		sendMsg = cpuIdleString + "%\n"
+		sendMsg := cpuIdleString + "%\n"
 		
 		c.Send(sendMsg)
 
