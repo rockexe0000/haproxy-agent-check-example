@@ -21,14 +21,38 @@ func main() {
 			return
 		}
 
-		if cpuIdle < 10 {
-			// Set server weight to half
-			fmt.Println("CPU Usage high - Setting server weight to 50%")
-			c.Send("50%\n")
-		} else {
-			fmt.Println("CPU Usage low - Setting server weight to 100%")
-			c.Send("100%\n")
-		}
+
+
+
+        fmt.Println("CPU Usage high - Setting server weight to %d%", cpuIdle/10)
+		c.Send("%d%\n", cpuIdle/10)
+
+
+
+//		if cpuIdle < 10 {
+//			// Set server weight to half
+//			fmt.Println("CPU Usage high - Setting server weight to 10%")
+//			c.Send("10%\n")
+//		} 
+//		else if (10 < cpuIdle && cpuIdle < 30 ) {
+//			// Set server weight to half
+//			fmt.Println("CPU Usage high - Setting server weight to 20%")
+//			c.Send("20%\n")
+//		} 
+//		else if (30 < cpuIdle && cpuIdle < 50 ) {
+//			// Set server weight to half
+//			fmt.Println("CPU Usage high - Setting server weight to 40%")
+//			c.Send("40%\n")
+//		} 
+//		else if (50 < cpuIdle && cpuIdle < 70 ) {
+//			// Set server weight to half
+//			fmt.Println("CPU Usage high - Setting server weight to 60%")
+//			c.Send("60%\n")
+//		} 
+//		else {
+//			fmt.Println("CPU Usage low - Setting server weight to 100%")
+//			c.Send("100%\n")
+//		}
 
 		c.Close()
 	})
