@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 	"reflect"
+	"strconv"
 
 	"github.com/firstrow/tcp_server"
 	"github.com/mackerelio/go-osstat/cpu"
@@ -28,7 +29,10 @@ func main() {
 
         fmt.Println("CPU Usage high - Setting server weight to %d%", cpuIdle)
 		
-		cpuIdleString := reflect.TypeOf(cpuIdle)
+		//cpuIdleString := reflect.TypeOf(cpuIdle)
+		
+		cpuIdleString := strconv.FormatFloat(cpuIdle, 'f', 2, 64)
+		
 		
 		sendMsg := cpuIdleString + "%\n"
 		
