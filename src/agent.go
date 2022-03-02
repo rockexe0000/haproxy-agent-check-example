@@ -24,8 +24,9 @@ func main() {
 
 
 
-        fmt.Println("CPU Usage high - Setting server weight to %d%", cpuIdle/10)
-		c.Send("%d%\n", cpuIdle/10)
+
+        fmt.Println("CPU Usage high - Setting server weight to %d%", cpuIdle)
+		c.Send("%d%\n", cpuIdle)
 
 
 
