@@ -25,14 +25,11 @@ func main() {
 
 
 
+        cpuIdleString := strconv.FormatFloat(cpuIdle, 'f', 2, 64)
 
-
-        fmt.Println("CPU Usage high - Setting server weight to %d%", cpuIdle)
+        fmt.Println("CPU Usage high - Setting server weight to %s%", cpuIdleString)
 		
-		//cpuIdleString := reflect.TypeOf(cpuIdle)
-		
-		cpuIdleString := strconv.FormatFloat(cpuIdle, 'f', 2, 64)
-		
+		//cpuIdleString := reflect.TypeOf(cpuIdleString)
 		
 		sendMsg := cpuIdleString + "%\n"
 		
